@@ -23,7 +23,6 @@ permalink_defaults:
 # Site settings
 SEOTitle: frontEnd 
 email: xiaopengfei123@mail.com
-description: "A blog"
 keyword: "javascript, frontEnd"
 header-img: img/header_img/home-bg-1-dark.jpg
 signature: true #show signature
@@ -33,7 +32,7 @@ signature-img: img/signature/Just-do-it-white.png
 github_username:    xiaopf
 twitter_username:   dusignr
 facebook_username:  Gang Du
-zhihu_username: xiaopf
+zhihu_username: pf-xiao
 
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
@@ -234,8 +233,9 @@ bg_effects:
           ,"rgb(119,195,79)"
           ,"rgb(4,77,34)"
           ,"rgb(122,2,60)"'
-  star:
-    enable: true
+#   ejs中已经用时间来替换了，用的7 - 18 点事非 star 模式
+#   star:
+#     enable: true
 
 # Visitor statistics
 visitor:

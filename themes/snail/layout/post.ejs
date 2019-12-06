@@ -193,7 +193,7 @@ layout: layout
     })
 </script>
 <!-- star 模式通过时间控制 -->
-<% if(config['bg_effects']['enable'] && config['bg_effects']['star']['enable']){ %>
+<% if(config['bg_effects']['enable'] && (new Date().getHours() > 18 || new Date().getHours() < 7)){ %>
     <style  type="text/css">
         .notice {
             color:white;
