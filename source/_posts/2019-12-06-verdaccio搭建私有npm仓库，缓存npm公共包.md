@@ -1,21 +1,19 @@
 ---
-title: Hexo快速搭建个人博客，并发布到github pages
+title: verdaccio搭建私有npm仓库，缓存npm公共包
 catalog: true
 comments: true
 date: 2019-12-06 15:02:12
 subtitle: A succinct hexo theme.
 header-img: snail-bg.jpg
 tags:
-- hexo-theme-snail
-- snail
-- hexo
+- verdaccio
+- npm
 catagories:
-- hexo-theme-snail
-- snail
-- hexo
+- verdaccio
+- npm
 ---
 
-
+## verdaccio搭建私有npm仓库，缓存npm公共包
 
 ### 私有npm仓库的特点：
 
