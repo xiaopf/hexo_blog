@@ -3,7 +3,7 @@ title: Hexo快速搭建个人博客，并发布到github pages
 catalog: true
 comments: true
 date: 2019-12-06 10:02:12
-subtitle: A succinct hexo theme.
+subtitle: 快速搭建hexo个人博客
 header-img: snail-bg.jpg
 tags:
 - hexo-theme-snail
@@ -77,6 +77,20 @@ $ hexo server
 -s, --static | 只使用静态文件
 -l, --log | 启动日记记录，使用覆盖记录格式
 
+
+generate 指令生成静态文件
+
+```
+$ hexo generate --watch //参数是监控文件变动自动生成静态文件的
+```
+
+选项 | 描述
+---|---
+-d, --deploy | 文件生成后立即部署网站
+-w, --watch | 监视文件变动
+-b, --bail | 启动日记记录，使用覆盖记录格式
+-f, --force | 生成过程中如果发生任何未处理的异常则抛出异常存在，那么 hexo g 只会重新生成改动的文件。使用该参数的效果接近 hexo clean && hexo generate
+
 #### 四、部署项目
 
 首先去github上面创建两个仓库，一个仓库存放本项目，叫地址A，另一个项目存放生成的博客静态文件，叫地址B。
@@ -146,3 +160,27 @@ $ hexo clean && hexo deploy
     }
 },
  ```
+
+<!-- #### 六、引入nodemon
+nodemon用来监视node.js应用程序中的任何更改并自动重启服务,非常适合用在开发环境中。nodemon将监视启动目录中的文件，如果有任何文件更改，nodemon将自动重新启动node应用程序。
+1. 安装nodemon
+```
+$ npm install --save-dev nodemon
+```
+2. nodemon配置saf  -->
+
+#### 六、引入gitment评论
+gitment是基于github的issue来显示评论的一个插件，[Gitment评论功能接入踩坑教程](https://www.jianshu.com/p/57afa4844aaa)
+1. 注册 OAuth Application 进入 https://github.com/settings/applications/new 注册一个application
+2. 注册成功后就可以拿到 Client ID 和 Client Secret
+3. 在根目录中找到 _config.yml文件，修改comment如下,
+```
+comment:
+  gitment:
+    enable: true // 开启gitment
+    owner: xiaopf // github用户名
+    repo: xiaopf.github.io // 评论存放的仓库，我直接用的博客静态资源存放的仓库了
+    client_id: xxxxx // 上文获得的Client ID
+    client_secret: xxxx // 上文获得的Client Secret
+```
+ 

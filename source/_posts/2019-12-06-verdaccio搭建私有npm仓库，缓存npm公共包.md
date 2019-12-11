@@ -3,7 +3,7 @@ title: verdaccio搭建私有npm仓库，缓存npm公共包
 catalog: true
 comments: true
 date: 2019-12-06 15:02:12
-subtitle: A succinct hexo theme.
+subtitle: npm私有仓库
 header-img: snail-bg.jpg
 tags:
 - verdaccio

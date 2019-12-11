@@ -5,7 +5,7 @@
 # Site
 title: xiaopf's site
 subtitle: '层楼终究误少年，自由早晚乱余生'
-description: 记录学习到的东西
+description: 记录生活，记录知识
 author: xiaopf
 language: 中文
 timezone: 'Asia/Shanghai'
@@ -21,7 +21,7 @@ permalink_defaults:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: frontEnd 
+SEOTitle: xiaopf 
 email: xiaopengfei123@mail.com
 keyword: "javascript, frontEnd"
 header-img: img/header_img/home-bg-1-dark.jpg
@@ -29,9 +29,9 @@ signature: true #show signature
 signature-img: img/signature/Just-do-it-white.png
 
 # SNS settings
-github_username:    xiaopf
-twitter_username:   dusignr
-facebook_username:  Gang Du
+github_username: xiaopf
+twitter_username: perfect_shaw
+instagram_username: perfect__shaw
 zhihu_username: pf-xiao
 
 # Build settings
@@ -44,14 +44,15 @@ disqus_username:
 # Baidu Analytics
 # ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
-ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
-ga_domain: yoursite
+ga_track_id: 'UA-154429678-1'          # Format: UA-xxxxxx-xx
+ga_domain: https://xiaopf.github.io/
 
 # Sidebar settings
 sidebar: true                      # whether or not using Sidebar.
 sidebar-about-description: "Welcome to visit, I'm xiaopf!"
-sidebar-avatar: img/ironman-draw.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/header.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
+- search
 - featured-tags
 - short-about
 - recent-posts
@@ -92,7 +93,7 @@ friends: [
 ]
 
 math:
-  enable: true
+  enable: false
   engine: mathjax
 
 #Custom Setting End
@@ -182,11 +183,11 @@ deploy:
 ## gitment url: https://github.com/imsun/gitment
 comment:
   gitment:
-    enable: false
-    owner:
-    repo:
-    client_id:
-    client_secret:
+    enable: true
+    owner: xiaopf
+    repo: xiaopf.github.io
+    client_id: cdef4a51db6a777a079b
+    client_secret: 7a1ff9334134ea02a901d0da92e6ee283068d19a
   livere:
     enable: false
   disqus:

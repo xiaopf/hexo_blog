@@ -109,7 +109,7 @@ zhihu_username: dusignr
 # Sidebar Settings
 sidebar: true                      # whether or not using Sidebar.
 sidebar-about-description: "Welcome to visit, I'm Dusign!"
-sidebar-avatar: img/ironman-draw.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/header.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags
 - short-about

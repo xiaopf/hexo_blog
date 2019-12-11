@@ -10,7 +10,7 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit":"npm run clean && npm run deploy"
+      "pre-commit": "npm run clean && npm run deploy"
     }
   },
   "hexo": {
@@ -33,5 +33,8 @@
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
     "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
   }
 }

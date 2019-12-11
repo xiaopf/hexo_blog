@@ -101,11 +101,11 @@ var searchFunc = function(path, search_id, content_id) {
     });
 }
 
-$(document).ready(function(){
-    $("#local-search-input").bind('keypress',function(event){
-        if(event.keyCode=='13'){
-            //$(this).val('');
-            alert('search');
-        }
-    })
-});
+// $(document).ready(function(){
+//     $("#local-search-input").bind('keypress',function(event){
+//         if(event.keyCode=='13'){
+//             //$(this).val('');
+//             alert('search');
+//         }
+//     })
+// });

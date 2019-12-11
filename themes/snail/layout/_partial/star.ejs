@@ -153,6 +153,11 @@
 
   (function() {
     "use strict";
+    // 移动端不开启悬浮的星星
+    const UA = window.navigator.userAgent;
+    if(UA.indexOf('Android') >= 0 || UA.indexOf('iPhone') >= 0){
+        return false;
+    }
     var threeD = function(param) {
       this.transIn = {};
       this.transOut = {};
