@@ -1,5 +1,11 @@
 @media (min-width: 1200px) {
-  .post-container,
+  .post-container {
+    padding-right: 5%;
+    position: relative;
+    z-index:99;
+    background: rgba(26,26,26,1);
+    opacity: 1;
+  }
   .sidebar-container {
     padding-right: 5%;
   }
@@ -7,6 +13,10 @@
 @media (min-width: 768px) {
   .post-container {
     padding-right: 5%;
+    position: relative;
+    z-index:99;
+    background: rgba(26,26,26,1);
+    opacity: 1;
   }
 }
 .sidebar-container {

@@ -304,13 +304,13 @@
       this.anim();
 
       window.addEventListener('mousemove', function(e) {
-        this.toX = (e.clientX - this.canvas.width / 2) * -0.8;
-        this.toY = (e.clientY - this.canvas.height / 2) * 0.8;
+        this.toX = (e.clientX - this.canvas.width / 2) /-80;
+        this.toY = (e.clientY - this.canvas.height / 2) /80;
       }.bind(this));
       window.addEventListener('touchmove', function(e) {
         e.preventDefault();
-        this.toX = (e.touches[0].clientX - this.canvas.width / 2) * -0.8;
-        this.toY = (e.touches[0].clientY - this.canvas.height / 2) * 0.8;
+        this.toX = (e.touches[0].clientX - this.canvas.width / 2) /-80;
+        this.toY = (e.touches[0].clientY - this.canvas.height / 2) /80;
       }.bind(this));
       window.addEventListener('mousedown', function(e) {
         for (var i = 0; i < 100; i++) {
@@ -342,8 +342,8 @@
   body div,body p,body ul,body li,div p,p{
     color: white;
     filter:alpha(Opacity=90);
-    -moz-opacity:0.9;
-    opacity: 0.9; 
+    -moz-opacity:0.95;
+    opacity: 0.95; 
   }
   body hr{
     background-color: rgba(255,255,255,0.4);
