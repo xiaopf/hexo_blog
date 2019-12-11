@@ -112,6 +112,10 @@ $ git commit -m xxxx // commit 代码
 $ git remote add origin 地址A // 本地代码与远程仓库关联
 $ git push origin master // 推到远程仓库
 ```
+##### 新建一篇文章
+```
+$ hexo new <title>
+```
 
 ##### 发布博客
 
@@ -126,3 +130,19 @@ $ hexo clean && hexo deploy
 #### 五、切换主题
 
 [hexo主题](https://hexo.io/themes/)网站上面有很多的主题可以选择，找到选中主题的github地址，切换主题具体操作需要看每个主题的ReadMe即可。如果自己要修改东西也可以进入themes目录下去调整相关代码。
+
+#### 六、引入husky
+由于博客的静态文章和项目的代码是分开两个仓库存放的，所以每次发布文章后，还需要把代码推到仓库中，引入husky就是利用git hooks配置预处理脚本。在项目commit后，直接发布文章，也就是把博客静态文件推送到远程仓库。
+ 
+ 1. 安装husky
+ ```
+ $ npm install --save-dev husky
+ ```
+ 2. package.json中，与“scripts“并列，添加如下内容：
+ ```
+"husky": {
+    "hooks": {
+        "pre-commit":"npm run clean && npm run deploy"
+    }
+},
+ ```

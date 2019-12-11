@@ -8,6 +8,11 @@
     "deploy": "hexo deploy",
     "server": "hexo server"
   },
+  "husky": {
+    "hooks": {
+        "pre-commit":"npm run clean && npm run deploy"
+    }
+  },
   "hexo": {
     "version": "4.0.0"
   },
