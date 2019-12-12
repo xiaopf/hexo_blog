@@ -9,9 +9,8 @@
 
     <% if(config['bg_effects']['enable']){ %>
         <!-- background effects start -->
-        <% if((new Date().getHours() >= 18 || new Date().getHours() < 7)){ %>
-            <%- partial('_partial/star.ejs') %>
-        <% } %>
+        <!-- show star -->
+        <%- partial('_partial/star.ejs') %>
         <!-- background effects end -->
     <% } %>
 

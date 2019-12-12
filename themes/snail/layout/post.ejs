@@ -193,51 +193,48 @@ layout: layout
     })
 </script>
 <!-- star 模式通过时间控制 -->
-<% if(config['bg_effects']['enable'] && (new Date().getHours() >= 18 || new Date().getHours() < 7)){ %>
-    <style  type="text/css">
-        .notice {
-            color:white;
-            margin:0px;
-            padding:0px;
-        }
 
-        .visitor_notice a {
-            text-decoration:none;
-            color:rgba(255,255,255,0.9);
-            font-weight:normal;
-            font-style:italic;
-        }
+<style  type="text/css">
+    .notice {
+        color:rgba(51,51,51,0.9);
+        margin:0px;
+        padding:0px;
+    }
 
-        .visitor_notice a:hover {
-            text-decoration:none;
-            color:rgba(255,255,255,0.9);
-            font-weight:bolder;
-            font-style:italic;
-        }
-    </style>
-<% }else{ %>
-    <style  type="text/css">
-        .notice {
-            color:rgba(51,51,51,0.9);
-            margin:0px;
-            padding:0px;
-        }
+    .visitor_notice a {
+        text-decoration:none;
+        color:rgba(51,51,51,0.9);
+        font-weight:normal;
+        font-style:italic;
+    }
 
-        .visitor_notice a {
-            text-decoration:none;
-            color:rgba(51,51,51,0.9);
-            font-weight:normal;
-            font-style:italic;
-        }
+    .visitor_notice a:hover {
+        text-decoration:none;
+        color:rgba(51,51,51,0.9);
+        font-weight:bolder;
+        font-style:italic;
+    }
 
-        .visitor_notice a:hover {
-            text-decoration:none;
-            color:rgba(51,51,51,0.9);
-            font-weight:bolder;
-            font-style:italic;
-        }
-    </style>
-<% } %>
+    .stars .notice {
+        color:white;
+        margin:0px;
+        padding:0px;
+    }
+
+    .stars .visitor_notice a {
+        text-decoration:none;
+        color:rgba(255,255,255,0.9);
+        font-weight:normal;
+        font-style:italic;
+    }
+
+    .stars .visitor_notice a:hover {
+        text-decoration:none;
+        color:rgba(255,255,255,0.9);
+        font-weight:bolder;
+        font-style:italic;
+    }
+</style>
 
 <style  type="text/css">
     /* place left on bigger screen */
