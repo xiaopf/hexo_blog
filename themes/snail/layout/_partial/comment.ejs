@@ -63,4 +63,21 @@ const gitment = new Gitment({
   // gitment.render(document.getElementById('comments'))
   // or
   // document.body.appendChild(gitment.render())
+  window.localStorage.setItem('loginAnchor',0)
+  setTimeout(() => {
+      let loginBtn = document.querySelector('.gitment-editor-login-link');
+      loginBtn.addEventListener('click',(e) => {
+        window.localStorage.setItem('loginAnchor',1)
+      })
+        const loginAnchor = window.localStorage.getItem('loginAnchor')
+        if(loginAnchor === '1'){
+            const container = document.createElement('a');
+            const e = document.createEvent("MouseEvents");   
+            e.initEvent("click", true, true);
+            container.href="#blog_comments";
+            container.dispatchEvent(e);
+        }
+  }, 1000);
+
+  
 </script>

@@ -159,11 +159,14 @@
         return false;
     }
     // 控制star显示隐藏
-    if((new Date().getHours() >= 7 && new Date().getHours() < 18)){
+    const mode = window.localStorage.getItem('mode');
+    if((new Date().getHours() >= 7 && new Date().getHours() < 22) && mode === 'light'){
+      window.localStorage.setItem('mode','light');
       canvasObj.style.display = "none";
       document.body.style.backgroundColor = "transparent";
       return false;
     } else {
+      window.localStorage.setItem('mode','star');
       canvasObj.style.display = "block";
       document.body.className = "stars"
       document.body.style.backgroundColor = "rgba(26,26,26,1)";
