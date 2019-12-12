@@ -66,6 +66,9 @@ const gitment = new Gitment({
   window.localStorage.setItem('loginAnchor',0)
   setTimeout(() => {
       let loginBtn = document.querySelector('.gitment-editor-login-link');
+      if(!loginBtn){
+        return false;
+      }
       loginBtn.addEventListener('click',(e) => {
         window.localStorage.setItem('loginAnchor',1)
       })
@@ -77,7 +80,7 @@ const gitment = new Gitment({
             container.href="#blog_comments";
             container.dispatchEvent(e);
         }
-  }, 1000);
+  }, 2000);
 
   
 </script>
