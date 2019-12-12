@@ -155,9 +155,34 @@
     "use strict";
     // 移动端不开启悬浮的星星
     const UA = window.navigator.userAgent;
+    const canvasObj = document.getElementById("canv");
     if(UA.indexOf('Android') >= 0 || UA.indexOf('iPhone') >= 0){
         return false;
     }
+    // 控制star显示隐藏
+    if((new Date().getHours() >= 7 && new Date().getHours() < 18)){
+      canvasObj.style.display = "none";
+      document.body.style.backgroundColor = "transparent";
+      return false;
+    } else {
+      canvasObj.style.display = "block";
+      document.body.className = "stars"
+      document.body.style.backgroundColor = "rgba(26,26,26,1)";
+      document.body.style.color = "#fff";
+      setTimeout(() => {
+        const gitmentContainer = document.getElementsByClassName("gitment-container");
+        const gitmentEditorPreview = document.getElementsByClassName("gitment-editor-preview");
+        const gitmentHeartIcon = document.getElementsByClassName("gitment-heart-icon");
+
+        gitmentContainer[0].style.color = "#fff";
+        gitmentContainer[1].style.color = "#fff";
+
+        gitmentEditorPreview[0].style.backgroundColor = "#fff";
+        gitmentHeartIcon[0].style.fill = "#fff";
+        
+      }, 2000);
+    }
+
     var threeD = function(param) {
       this.transIn = {};
       this.transOut = {};
@@ -335,12 +360,10 @@
 
 <style  type="text/css">
   body{
-    background-color: rgba(26,26,26,1);
     text-align: -webkit-auto;
-    color: white;
   }
-  body div,body p,body ul,body li,div p,p{
-    color: white;
+  .stars div,.stars p,.stars ul,.stars li{
+    color: #fff;
     filter:alpha(Opacity=90);
     -moz-opacity:0.95;
     opacity: 0.95; 
@@ -360,6 +383,7 @@
   }
   #canv{
     position: fixed;
+    display: none;
   }
   .cnblogs_code {
     color: #f8f8f8;

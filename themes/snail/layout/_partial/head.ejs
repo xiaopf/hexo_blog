@@ -24,13 +24,8 @@
     <%- css('css/bootstrap.min.css') %>
 
     <!-- Custom CSS --> 
-    <% if(config['bg_effects']['enable'] && (new Date().getHours() >= 18 || new Date().getHours() < 7)){ %>
-      <!-- background effects start -->
-      <%- css('css/dusign-star.css')%>
-    <% }else{ %>
-      <%- css('css/dusign-light.css')%>
-      <!-- background effects end -->
-    <% } %>
+    <%- css('css/xiaopf.css')%>
+    <!-- background effects end -->
     
     <!-- Pygments Highlight CSS -->
     <%- css('css/highlight') %>
@@ -41,24 +36,17 @@
 
     <%- css('css/signature')%>
 
-    <% if(config['bg_effects']['enable'] && (new Date().getHours() >= 18 || new Date().getHours() < 7)){ %>
-      <%- css('css/toc-star')%>
-    <% }else{ %>
-      <%- css('css/toc')%>
-    <% } %>
+    <%- css('css/toc')%>
 
-    <%- css('css/dusign-common.css') %>
+    <%- css('css/common.css') %>
     <%- css('css/fonts.googleapis.css') %>
 
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
     <!--<link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <% if(config['bg_effects']['enable'] && (new Date().getHours() >= 18 || new Date().getHours() < 7)){ %>
-      <%- css('css/font-awesome.star.css')%>
-    <% }else{ %>
-      <%- css('css/font-awesome.css')%>
-    <% } %>
+
+    <%- css('css/font-awesome.css')%>
 
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
