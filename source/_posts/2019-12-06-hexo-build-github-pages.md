@@ -4,7 +4,7 @@ catalog: true
 comments: true
 date: 2019-12-06 10:02:12
 subtitle: 快速搭建hexo个人博客
-header-img: snail-bg.jpg
+header-img: defaultHeaderBg.jpg
 tags:
 - hexo-theme-snail
 - snail
@@ -130,6 +130,7 @@ $ git push origin master // 推到远程仓库
 ```
 $ hexo new <title>
 ```
+此处新建的时候。title 最好是英文的标题，如果_config.yml配置的路由规则（即permalink）是默认值 :year/:month/:day/:title/ ，那么进入文章后路由就有中文了，有中文使用 gitment 评价系统时，登陆 github 账号会出现 404 问题。
 
 ##### 发布博客
 

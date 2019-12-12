@@ -150,12 +150,11 @@
       return _args;
     }
   };
-
+  const canvasObj = document.getElementById("canv");
   (function() {
     "use strict";
     // 移动端不开启悬浮的星星
     const UA = window.navigator.userAgent;
-    const canvasObj = document.getElementById("canv");
     if(UA.indexOf('Android') >= 0 || UA.indexOf('iPhone') >= 0){
         return false;
     }
@@ -173,13 +172,13 @@
         const gitmentContainer = document.getElementsByClassName("gitment-container");
         const gitmentEditorPreview = document.getElementsByClassName("gitment-editor-preview");
         const gitmentHeartIcon = document.getElementsByClassName("gitment-heart-icon");
+        if(gitmentContainer.length > 0 && gitmentEditorPreview.length > 0 && gitmentHeartIcon.length > 0) {
+            gitmentContainer[0].style.color = "#fff";
+            gitmentContainer[1].style.color = "#fff";
 
-        gitmentContainer[0].style.color = "#fff";
-        gitmentContainer[1].style.color = "#fff";
-
-        gitmentEditorPreview[0].style.backgroundColor = "#fff";
-        gitmentHeartIcon[0].style.fill = "#fff";
-        
+            gitmentEditorPreview[0].style.backgroundColor = "#fff";
+            gitmentHeartIcon[0].style.fill = "#fff";
+        }
       }, 2000);
     }
 
@@ -352,10 +351,12 @@
     var app = new Build();
     app.run();
   })();
+  
   window.addEventListener('resize', function() {
-    this.canvas.width = w = window.innerWidth;
-    this.canvas.height = h = window.innerHeight;
+    canvasObj.width = w = window.innerWidth;
+    canvasObj.height = h = window.innerHeight;
   }, false);
+  
 </script>
 
 <style  type="text/css">
@@ -365,8 +366,8 @@
   .stars div,.stars p,.stars ul,.stars li{
     color: #fff;
     filter:alpha(Opacity=90);
-    -moz-opacity:0.95;
-    opacity: 0.95; 
+    -moz-opacity:0.98;
+    opacity: 0.98; 
   }
   body hr{
     background-color: rgba(255,255,255,0.4);

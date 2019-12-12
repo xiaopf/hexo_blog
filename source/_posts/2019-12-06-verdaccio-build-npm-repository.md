@@ -4,7 +4,7 @@ catalog: true
 comments: true
 date: 2019-12-06 15:02:12
 subtitle: npm私有仓库
-header-img: snail-bg.jpg
+header-img: defaultHeaderBg.jpg
 tags:
 - verdaccio
 - npm

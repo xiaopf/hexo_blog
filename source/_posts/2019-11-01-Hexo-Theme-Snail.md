@@ -4,7 +4,7 @@ catalog: true
 comments: true
 date: 2019-11-01 22:02:12
 subtitle: A succinct hexo theme.
-header-img: snail-bg.jpg
+header-img: defaultHeaderBg.jpg
 tags:
 - dusign
 - hexo-theme-snail
@@ -16,6 +16,7 @@ catagories:
 - snail
 - hexo
 ---
+
 # hexo-theme-snail
 [View Hexo-Theme-Snail Sources On Github &#10174; ](https://github.com/dusign/hexo-theme-snail)
 
