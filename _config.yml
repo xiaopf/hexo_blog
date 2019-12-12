@@ -184,10 +184,10 @@ deploy:
 comment:
   gitment:
     enable: true
-    owner: xiaopf
-    repo: xiaopf.github.io
-    client_id: cdef4a51db6a777a079b
-    client_secret: 7a1ff9334134ea02a901d0da92e6ee283068d19a
+    owner: "xiaopf"
+    repo: "xiaopf.github.io"
+    client_id: "cdef4a51db6a777a079b"
+    client_secret: "7a1ff9334134ea02a901d0da92e6ee283068d19a"
   livere:
     enable: false
   disqus:
