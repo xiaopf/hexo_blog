@@ -160,13 +160,12 @@
     }
     // 控制star显示隐藏
     const mode = window.localStorage.getItem('mode');
-    if((new Date().getHours() >= 7 && new Date().getHours() < 22) && mode === 'light'){
-      window.localStorage.setItem('mode','light');
+    // 时间处于7-18点之间，且localStorage中没有mode的情况，或者有mode，mode是 light的情况使用 light mode
+    if((new Date().getHours() >= 7 && new Date().getHours() < 18 && !mode) || (mode && mode === 'light')){
       canvasObj.style.display = "none";
       document.body.style.backgroundColor = "transparent";
       return false;
     } else {
-      window.localStorage.setItem('mode','star');
       canvasObj.style.display = "block";
       document.body.className = "stars"
       document.body.style.backgroundColor = "rgba(26,26,26,1)";
@@ -178,7 +177,6 @@
         if(gitmentContainer.length > 0 && gitmentEditorPreview.length > 0 && gitmentHeartIcon.length > 0) {
             gitmentContainer[0].style.color = "#fff";
             gitmentContainer[1].style.color = "#fff";
-
             gitmentEditorPreview[0].style.backgroundColor = "#fff";
             gitmentHeartIcon[0].style.fill = "#fff";
         }

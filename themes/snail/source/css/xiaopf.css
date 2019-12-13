@@ -383,11 +383,25 @@ pre code {
   .navbar-custom.is-fixed .navbar-brand:focus {
     color: #0085a1;
   }
-  .navbar-custom.is-fixed .nav li a {
+  .nav li .change-mode{
+      cursor: pointer;
+      color:white;
+      padding: 20px;
+      margin:0;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+  }
+  .navbar-custom.is-fixed .nav li a,
+  .navbar-custom.is-fixed .nav li p {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
-  .navbar-custom.is-fixed .nav li a:focus {
+  .navbar-custom.is-fixed .nav li a:focus,
+  .navbar-custom.is-fixed .nav li p:hover,
+  .navbar-custom.is-fixed .nav li p:focus {
     color: #0085a1;
   }
   .navbar-custom.is-visible {

@@ -33,12 +33,7 @@
                         <% } %>
                     <% }); %>
                     <li style="cursor: pointer;">
-                        <p 
-                            style="cursor: pointer;color:white;padding: 20px;margin:0;text-transform: uppercase;font-size: 12px;line-height: 20px;font-weight: 800;letter-spacing: 1px;"
-                            id="changeMode"
-                            title="change mode"
-                            href="javascript:void(0)"
-                        >
+                        <p id="changeMode" class="change-mode" title="change mode">
                             Mode
                         </p>
                     </li>
@@ -58,31 +53,22 @@
     const $navbar = document.querySelector('#huxblog_navbar');
     const $collapse = document.querySelector('.navbar-collapse');
     const $changeMode = document.querySelector('#changeMode');
-
+    const mode = window.localStorage.getItem('mode');
     $changeMode.addEventListener('click', handleChangeMode)
     $toggle.addEventListener('click', handleMagic)
     
-    let mode = window.localStorage.getItem('mode');
-    if(mode === 'light'){
-        $changeMode.innerHTML='STAR'
-    }else{
-        $changeMode.innerHTML='LIGHT'
+    // 时间处于7-18点之间，且localStorage中没有mode的情况，或者有mode，mode是 light的情况使用 light mode
+    if((new Date().getHours() >= 7 && new Date().getHours() < 18 && !mode) || (mode && mode === 'light')){
+      $changeMode.innerHTML='STAR'
+    } else {
+      $changeMode.innerHTML='LIGHT'
     }
     
     function handleChangeMode(e){
-        let mode = window.localStorage.getItem('mode');
-        if(!mode){
-            if((new Date().getHours() >= 7 && new Date().getHours() < 22)){
-                window.localStorage.setItem('mode','light');
-            }else{
-                window.localStorage.setItem('mode','star');
-            }
+        if((new Date().getHours() >= 7 && new Date().getHours() < 18 && !mode) || (mode && mode === 'light')){
+            window.localStorage.setItem('mode','star');
         }else{
-            if(mode==='star'){
-                window.localStorage.setItem('mode','light');
-            }else{
-                window.localStorage.setItem('mode','star');
-            }
+            window.localStorage.setItem('mode','light');
         }
         window.location.reload()
     }
