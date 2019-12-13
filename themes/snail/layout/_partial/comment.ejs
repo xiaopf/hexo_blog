@@ -72,15 +72,13 @@ const gitment = new Gitment({
       loginBtn.addEventListener('click',(e) => {
         window.localStorage.setItem('loginAnchor',1)
       })
-        const loginAnchor = window.localStorage.getItem('loginAnchor')
-        if(loginAnchor === '1'){
-            const container = document.createElement('a');
-            const e = document.createEvent("MouseEvents");   
-            e.initEvent("click", true, true);
-            container.href="#blog_comments";
-            container.dispatchEvent(e);
-        }
   }, 2000);
-
-  
+  const loginAnchor = window.localStorage.getItem('loginAnchor')
+  if(loginAnchor === '1'){
+      const container = document.createElement('a');
+      const e = document.createEvent("MouseEvents");   
+      e.initEvent("click", true, true);
+      container.href="#footer";
+      container.dispatchEvent(e);
+  }
 </script>
