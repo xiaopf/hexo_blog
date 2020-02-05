@@ -11,7 +11,7 @@ catagories:
 ---
 
 ## git 按目录配置多个用户
-由于在日常工作中，公司用的是gitlab，用户名和邮箱一套，我自己个人用的是github，用户名和邮箱是另一套，所以在电脑中我需要配置两个git用户，根据这个需求找到了git在2.13.0版本中包含了一个新的功能includeIf配置，可以把匹配的路径使用对应的配置用户名和邮箱。下面就一步一步的来分解如何配置多用户。
+由于在日常工作中，公司用的是gitlab，用户名和邮箱一套，我自己个人用的是github，用户名和邮箱是另一套，所以在电脑中我需要配置两个git用户，根据这个需求找到了git在2.13.0版本中包含了一个新的功能includeIf配置，可以把匹配的路径使用对应的配置用户名和邮箱。下面就一步一步的来分解如何配置多用户。（后文gitlab@email.com和gitlab-username分别代表公司账号信息，github代表个人账号信息）
 ### 一 配置 SSH KEY
 #### 1.生成ssh key
 ```
@@ -28,20 +28,20 @@ ssh-keygen -t rsa -C "gitlab@email.com"
 ```
 上面的命令执行后命令行中会出现下面的结果，这里如果你什么都不输入会使用括号中的id_rsa 这个名字，产生两个文件：一个id_rsa，一个id_rsa.pub
 ```
-Enter file in which to save the key (/Users/xxx/.ssh/id_rsa):
+Enter file in which to save the key （/Users/xxx/.ssh/id_rsa）:
 ```
-因为我们需要两个用户，所以需要在这输入key，以区分不同用户产生的文件（可以用id_rsa_github和id_rsa_gitlab，能区分开就好）。后续密码就可以不设置了，一路回车直到出现下面的样子即可。
+因为我们需要两个用户，所以需要在这输入带路径的 key, 即 Users/xxx/.ssh/id_rsa_gitlab，以区分不同用户产生的文件（可以用id_rsa_github和id_rsa_gitlab，能区分开就好）。后续密码就可以不设置了，一路回车直到出现下面的样子即可。
 
 ```
-xxx@bogon ~ % ssh-keygen -t rsa -C "mywork@email.com" 
+xxx@bogon ~ % ssh-keygen -t rsa -C "gitlab@email.com" 
 Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/xxx/.ssh/id_rsa): xxxx
+Enter file in which to save the key (/Users/xxx/.ssh/id_rsa): /Users/xxx/.ssh/id_rsa_gitlab
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
 Your identification has been saved in xxxx.
 Your public key has been saved in xxxx.pub.
 The key fingerprint is:
-SHA256:KNkUWr07DhJHsuIE0c4EVLeJbOrVh5aprXBQEA9grBw mywork@email.com
+SHA256:KNkUWr07DhJHsuIE0c4EVLeJbOrVh5aprXBQEA9grBw gitlab@email.com
 The key's randomart image is:
 +---[RSA 2048]----+
 |BXo. .o.         |
@@ -55,7 +55,8 @@ The key's randomart image is:
 |   .             |
 +----[SHA256]-----+
 ```
-上面的步骤因为有两个用户，所以需要执行两次，产生两个KEY。
+<font color='red'> 上面的步骤因为有两个用户，所以需要执行两次，命令中将gitlab换成github。 </font>
+
 #### 2. 配置SSH KEY
 下面我们就需要把 id_rsa.pub（这里根据上面起的名字决定）文件内容复制到github和gitlab中了，大概步骤如下，不再赘述：
 - 登录github，然后点击头像进入Settings，找到SSH and GPG keys，点击 New SSH key，title随便写，能区分出设备即可，key 里面记得带上ssh-rsa字段。
@@ -105,13 +106,13 @@ Welcome to GitLab, @xxx!
 ```
 [user]
     name = gitlab-username
-    email = gitlab-email@email.com
+    email = gitlab@email.com
 ```
 公司工程配置文件~/.gitconfig-github
 ```
 [user]
     name = github-username
-    email = github-email@email.com
+    email = github@email.com
 ```
 
 注意事项：
